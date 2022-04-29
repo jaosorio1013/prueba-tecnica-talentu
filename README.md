@@ -1,5 +1,16 @@
 # Prueba Técnica Talentu para desarrolladores PHP Backend
 
+## Setup inicial
+
+1. Agregar al archivo **hosts** `127.0.0.1    prueba-tecnica-talentu.local`
+2. Para arrancar el proyecto ejecutar `docker-compose up -d --build nginx`
+3. Cuando se encuentren disponibles los contenedores ejecutar:
+    - `docker-compose run --rm composer install`
+    - `docker-compose run --rm artisan key:generate`
+
+### En caso de realizar modificaciones en la configuración de nginx o php
+Ejecutar el comando `docker-compose up -d --build nginx`
+
 ## Tener en cuenta
 
 - [ ] Autenticación utilizando JWT
