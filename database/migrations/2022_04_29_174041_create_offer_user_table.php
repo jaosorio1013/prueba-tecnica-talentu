@@ -10,8 +10,8 @@ class CreateOfferUserTable extends Migration
     {
         Schema::create('offer_user', static function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->index();
-            $table->foreignId('offer_id')->index();
+            $table->foreignId('user_id')->nullable()->constrained('users')->nullOnDelete();
+            $table->foreignId('offer_id')->nullable()->constrained('offers')->nullOnDelete();
             $table->timestamps();
         });
     }

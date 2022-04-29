@@ -18,7 +18,7 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - ./src:/var/www/html
+      - .:/var/www/html
     networks:
       - laravel
 
@@ -28,7 +28,7 @@ services:
       dockerfile: Docker/php.dockerfile
     container_name: php
     volumes:
-      - ./src:/var/www/html
+      - .:/var/www/html
     networks:
       - laravel
 
@@ -51,7 +51,7 @@ services:
     image: composer:latest
     container_name: composer
     volumes:
-      - ./src:/var/www/html
+      - .:/var/www/html
     working_dir: /var/www/html
     networks:
       - laravel
@@ -62,7 +62,7 @@ services:
       dockerfile: Docker/php.dockerfile
     container_name: artisan
     volumes:
-      - ./src:/var/www/html
+      - .:/var/www/html
     working_dir: /var/www/html
     entrypoint: ["php", "artisan"]
     networks:
@@ -74,7 +74,7 @@ services:
       dockerfile: Docker/php.dockerfile
     container_name: phpunit
     volumes:
-      - ./src:/var/www/html
+      - .:/var/www/html
     working_dir: /var/www/html
     entrypoint: ["/var/www/html/vendor/bin/phpunit"]
     networks:
@@ -94,7 +94,7 @@ services:
       dockerfile: Docker/php.dockerfile
     container_name: scheduler
     volumes:
-      - ./src:/var/www/html
+      - .:/var/www/html
     working_dir: /var/www/html
     entrypoint: ["php", "artisan", "schedule:work"]
     networks:
