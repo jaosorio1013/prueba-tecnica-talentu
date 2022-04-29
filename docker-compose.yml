@@ -38,7 +38,7 @@ services:
     ports:
       - 4306:3306
     volumes:
-      - ./mysql:/var/lib/mysql
+      - ./Docker/mysql:/var/lib/mysql
     environment:
       MYSQL_DATABASE: laraveldb
       MYSQL_USER: laravel
